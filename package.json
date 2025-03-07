@@ -1,0 +1,16 @@
+{
+  "name": "sqlite_server",
+  "version": "0.0.1",
+  "description": "MCP Server for SQLite. Implemented with Typescript",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Javier Santos Martín",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^22.13.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}

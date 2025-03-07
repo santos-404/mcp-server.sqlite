@@ -9,6 +9,7 @@
   "author": "Javier Santos Martín",
   "license": "MIT",
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
     "@types/node": "^22.13.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"

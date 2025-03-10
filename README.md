@@ -15,12 +15,19 @@ TODO
 
 ## How to run it?
 
-In development the easiest and fastest way to run the program is:
+A docker version will be add. However, now you must do this:
 
-    ```bash
-    npx ts-node . 
-    ```
-If you'd prefer it, you can compile it too.
+```bash
+npm run build  # In order to build the compiled version
+
+node dist/index.js
+```
+
+There are some files which need the compiled version of the server, if you are trying to run a file which doesn't you can just do:
+
+```
+npx ts-node
+```
 
 ## License
 

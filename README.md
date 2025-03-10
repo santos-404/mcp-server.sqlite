@@ -16,6 +16,7 @@ TODO
 ## How to run it?
 
 In development the easiest and fastest way to run the program is:
+
     ```bash
     npx ts-node . 
     ```

@@ -7,9 +7,9 @@ import { z } from "zod";
 
 import { VERSION } from "./utils/version.js";
 import * as types from './utils/types.js';
-import { SqliteDatabase } from "./db/SqliteDatabase.js";
+import { SqliteDatabase } from "./utils/SqliteDatabase.js";
 
-const dbPath = process.env.DB_PATH || null;
+const dbPath = process.env.DB_PATH || "" ;
 const db = new SqliteDatabase(dbPath);
 
 const server = new Server(
@@ -53,7 +53,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           throw new Error("Only SELECT queries are allowed for read_query");
 
         const results = await db.executeQuery(query, params);
-        return results;
+        return {
+          content: [{ type: "text", text: JSON.stringify(results, null, 2) }],
+        };
       } 
       default:
         throw new Error(`Unknown tool: ${request.params.name}`);

@@ -1,17 +1,31 @@
 {
-  "name": "sqlite_server",
-  "version": "0.0.1",
-  "description": "MCP Server for SQLite. Implemented with Typescript",
-  "main": "index.ts",
-  "scripts": {
-    "test": "test"
-  },
-  "author": "Javier Santos Martín",
-  "license": "MIT",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.1",
-    "@types/node": "^22.13.9",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.2"
-  }
+    "name": "sqlite_server",
+    "version": "0.0.1",
+    "description": "MCP Server for SQLite. Implemented with Typescript",
+    "main": "index.ts",
+    "bin": {
+        "mcp-server-sqlite": "dist/index.js"
+    },
+    "bugs": "https://github.com/javsanmar5/mcp-server.sqlite/issues",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc && shx chmod +x dist/*.js",
+        "prepare": "npm run build",
+        "watch": "tsc --watch",
+        "test": "test"
+    },
+    "author": "Javier Santos Martín",
+    "license": "MIT",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.6.1",
+        "@types/node": "^22.13.9",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2",
+        "zod": "^3.24.2"
+    },
+    "devDependencies": {
+        "shx": "^0.3.4"
+    }
 }

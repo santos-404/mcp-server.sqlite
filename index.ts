@@ -7,8 +7,11 @@ import { z } from "zod";
 import { VERSION } from "./utils/version.js";
 import * as types from './utils/types.js';
 import { SqliteDatabase } from "./utils/SqliteDatabase.js";
+import { getArgumentValue } from "./utils/parseArguments.js";
 
-const dbPath: string = process.env.DB_PATH || "" ;
+const dbPath: string | undefined = getArgumentValue("--db-path");
+if (!dbPath) throw new Error("A dbpath must be specified by the argument: --db-path");
+
 const db: SqliteDatabase = new SqliteDatabase(dbPath);
 
 const server = new Server(

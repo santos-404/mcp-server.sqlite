@@ -36,5 +36,7 @@ This is project is licensed under the MIT License
 
 ## Contributing
 
-I'm currently doing this with learning purposes so I think it makes no much sense to ask for contributing. But if you want to add something just make a Pull Request and I'll check it
+I'm currently doing this with learning purposes so I think it makes no much sense to ask for contributing. But if you want to add something just make a Pull Request and I'll check it.
+
+
 Thanks!

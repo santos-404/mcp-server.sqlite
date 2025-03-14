@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { CallToolRequestSchema, ListRootsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -9,8 +8,8 @@ import { VERSION } from "./utils/version.js";
 import * as types from './utils/types.js';
 import { SqliteDatabase } from "./utils/SqliteDatabase.js";
 
-const dbPath = process.env.DB_PATH || "" ;
-const db = new SqliteDatabase(dbPath);
+const dbPath: string = process.env.DB_PATH || "" ;
+const db: SqliteDatabase = new SqliteDatabase(dbPath);
 
 const server = new Server(
   {

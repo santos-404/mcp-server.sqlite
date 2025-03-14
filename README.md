@@ -10,15 +10,23 @@ Nothing implemented yet.
 
 ## How to install this locally?
 
-TODO
+```bash
+git clone https://github.com/javsanmar5/mcp-server.sqlite.git
 
+cd mcp-server.sqlite
+```
+
+A docker version will be add. However, now you must do this:
+```bash
+pnpm install
+```
 
 ## How to run it?
 
-A docker version will be add. However, now you must do this:
+As said, docker version will be add. However, now you must do this:
 
 ```bash
-npm run build  # In order to build the compiled version
+pnpm run build  # In order to build the compiled version
 
 node dist/index.js
 ```

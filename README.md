@@ -28,7 +28,7 @@ As said, docker version will be add. However, now you must do this:
 ```bash
 pnpm run build  # In order to build the compiled version
 
-node dist/index.js
+node dist/index.js --db-path ~/<path>/db.sqlite3
 ```
 
 There are some files which need the compiled version of the server, if you are trying to run a file which doesn't you can just do:

@@ -37,6 +37,15 @@ There are some files which need the compiled version of the server, if you are t
 npx ts-node
 ```
 
+### Disclaimer
+If you find a bug when trying to run the app for the first time you can try:
+
+```bash
+cd node_modules/sqlite3
+pnpm run rebuild
+```
+
+
 ## License
 
 This is project is licensed under the MIT License

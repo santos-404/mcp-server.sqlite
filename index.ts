@@ -1,5 +1,5 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { CallToolRequestSchema, ListRootsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
+import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import zodToJsonSchema from "zod-to-json-schema";
 import { z } from "zod";
@@ -26,7 +26,7 @@ const server = new Server(
   }
 );
 
-server.setRequestHandler(ListRootsRequestSchema, async () => {
+server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
     tools: [
       {
@@ -74,7 +74,6 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function runServer() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.log("SQLite MCP Server running on stdio...");
 }
 
 runServer().catch((error) => {

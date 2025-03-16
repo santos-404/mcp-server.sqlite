@@ -41,7 +41,7 @@ Add the following to your AI client's configuration file:
       "mcp-test:/mcp",
       "mcp/sqlite",
       "--db-path",
-      "test.db"
+      "test_db.sqlite3"
     ]
   }
 }

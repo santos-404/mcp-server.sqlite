@@ -13,9 +13,10 @@ ENV npm_config_build_from_source=true
 ENV npm_config_sqlite=/usr
 
 RUN pnpm install --ignore-scripts
+# sqlite3 package was being failing to be installed. I have to rebuilt it here
+RUN cd node_modules/sqlite3 && pnpm rebuild
 
 COPY . .
-
 RUN pnpm run build
 
 FROM node:22.12 AS release

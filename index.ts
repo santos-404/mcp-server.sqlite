@@ -31,7 +31,12 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
     tools: [
       {
         name: "read_query",
-        description: "Execute a SELECT query on the SQLite database",
+        description: "Execute a SELECT query on a table of the SQLite database",
+        inputSchema: zodToJsonSchema(types.ReadQuerySchema)
+      }, 
+      {
+        name: "list_tables",
+        description: "List all tables on the SQLite database",
         inputSchema: zodToJsonSchema(types.ReadQuerySchema)
       }
     ]
@@ -59,6 +64,14 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           content: [{ type: "text", text: JSON.stringify(results, null, 2) }],
         };
       } 
+      case "list_tables": {
+        const query = "SELECT name FROM sqlite_master WHERE type='table';"
+        const results = await db.executeQuery(query);
+        return {
+          content: [{ type: "text", text: JSON.stringify(results, null, 2) }],
+        };
+
+      }
       default:
         throw new Error(`Unknown tool: ${request.params.name}`);
     }

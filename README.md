@@ -8,6 +8,7 @@ Not familiar with MCP? Check out the [What is an MCP?](#whats-an-mcp) section be
 
 | Command | Description | Example |
 |---------|-------------|---------|
+| `list_tables` | List all tables on the SQLite database | - |
 | `read_query` | Execute SELECT queries on the SQLite database | `SELECT * FROM users WHERE age > 18` |
 
 ## Installation & Setup
@@ -47,7 +48,7 @@ Add the following to your AI client's configuration file:
 }
 ```
 
-If you don't know what is that json file you might want to see the [Client Configuration Guide](#client-configuration-guide).
+If you don't know what is that json file you might want to see the [Client Configuration Guide](#tutorial-setting-up-with-claude-desktop).
 
 ### 3. Restart your AI client
 
